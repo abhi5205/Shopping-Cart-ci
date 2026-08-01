@@ -1,6 +1,7 @@
 from flask import *
 import sqlite3, hashlib, os
 from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 app.secret_key = 'random string'
@@ -339,4 +340,8 @@ def parse(data):
     return ans
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(
+        host=os.getenv("FLASK_HOST", "127.0.0.1"),
+        port=int(os.getenv("PORT", 5000)),
+        debug=True
+    )
