@@ -23,3 +23,36 @@ Sample credentials present in existing database:
 Username - sample@example.com
 Password - sample
 
+## Running with Docker
+
+### Build the Docker image
+
+```bash
+docker build -t shopping-cart .
+```
+
+### Run the container
+
+```bash
+docker run -p 5000:5000 shopping-cart
+```
+
+Visit:
+
+```
+http://localhost:5000
+```
+
+---
+
+## Running with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+Visit:
+
+```
+http://localhost:5000
+```
